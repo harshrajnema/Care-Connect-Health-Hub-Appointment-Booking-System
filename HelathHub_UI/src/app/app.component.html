@@ -1,0 +1,29 @@
+<app-header> </app-header>
+<div
+  *ngIf="isAuthenticated; else login"
+  style="display: flex; flex-direction: column; flex: 1"
+>
+  <app-menu *ngIf="adminMenuShow"></app-menu>
+
+  <main>
+    <!-- <app-dashboard></app-dashboard> -->
+    <router-outlet></router-outlet>
+  </main>
+  <app-footer></app-footer>
+</div>
+<ng-template #login>
+  <main
+    class="login-style"
+    style="
+      margin: 0px;
+      background-image: url('../../assets/bg-img1.jpg');
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 75vh;
+    "
+  >
+    <app-login></app-login>
+  </main>
+  <app-footer style="margin-left: 0px"></app-footer>
+</ng-template>

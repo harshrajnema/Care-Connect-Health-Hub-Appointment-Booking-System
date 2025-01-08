@@ -1,0 +1,84 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card p-4 shadow-lg" style="width: 30rem; border-radius: 15px">
+    <div class="card-body">
+      <h3 class="text-center mb-4">Sign Up</h3>
+      <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+        <div class="mb-3">
+          <label for="firstName" class="form-label">First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            class="form-control"
+            placeholder="Enter your first name"
+            ngModel
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            class="form-control"
+            placeholder="Enter your last name"
+            ngModel
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="phoneNumber" class="form-label">Phone Number</label>
+          <input
+            type="tel"
+            id="phoneNumber"
+            name="phoneNumber"
+            class="form-control"
+            placeholder="Enter your phone number"
+            ngModel
+            pattern="[0-9]{10}"
+            required
+          />
+          <small class="text-muted">Format: 10-digit number</small>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter your email"
+            ngModel
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Enter your password"
+            ngModel
+            minlength="6"
+            required
+          />
+        </div>
+        <div class="d-flex justify-content-between mt-4">
+          <button type="button" class="btn btn-secondary" (click)="onCancel()">
+            Cancel
+          </button>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!signupForm.valid"
+          >
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

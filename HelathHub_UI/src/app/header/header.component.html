@@ -1,0 +1,44 @@
+<div class="navbar-fixed gold darken-4">
+  <nav>
+    <div class="nav-wrapper blue darken-4" style="overflow: hidden">
+      <a href="#" data-activates="slide-out" class="button-collapse"
+        ><i class="material-icons">menu</i></a
+      >
+
+      <ul class="center">
+        <li>
+          <!--  <a style="width: 250px; height: 64px"
+            ><img
+              src="https://res.cloudinary.com/ddhwpdeaj/image/upload/v1732017059/ntse/hh_nxfge6.png"
+              style="height: 64px"
+            />
+          </a> -->
+          <a style="width: 250px; height: 64px"
+            ><img src="assets\HealthCare.png" style="height: 64px" />
+          </a>
+        </li>
+        <li><h4></h4></li>
+        <li>
+          <h4 class="headerName">
+            <b><font color="#ffffff">Care Connect</font></b>
+          </h4>
+        </li>
+        <li><h4></h4></li>
+      </ul>
+
+      <ul id="nav-mobile" class="right" *ngIf="isAuthenticated">
+        <li>
+          <a
+            [routerLink]="['./patient']"
+            routerLinkActive="   "
+            class="waves-effect white-text"
+            ><i class="material-icons white-text">person</i>Profile</a
+          >
+        </li>
+        <li (click)="logout()">
+          <a><i class="material-icons">logout</i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

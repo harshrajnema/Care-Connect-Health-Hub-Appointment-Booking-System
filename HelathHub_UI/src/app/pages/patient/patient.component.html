@@ -1,0 +1,134 @@
+<div class="row">
+  <nav class="z-depth-0">
+    <div class="nav-wrapper white">
+      <div class="col s8 m9 l7">
+        <a [routerLink]="['../']" class="breadcrumb grey-text">Dashboard</a>
+        <a [routerLink]="['./']" class="breadcrumb active">Patient</a>
+      </div>
+      <!--   
+           <div class="col s2 m1 l1">
+              <a class="waves-effect  green btn-large modal-trigger" href="#modal12"  style="    height: 42px;
+              line-height: 43px;
+              padding: 0px 20px;"              
+                (click)="downloadexcel()"><i class="large material-icons" style="font-size: 2rem; height: 42px;
+              line-height: 43px;">grid_on</i></a> 
+          </div>   
+           <div class="col s2 m1 l1">
+              <a class="waves-effect  brown btn-large modal-trigger" style="    height: 42px;
+              line-height: 43px;
+              padding: 0px 20px;"              
+                (click)="downloadpdf()"><i class="large material-icons" style="font-size: 2rem; height: 42px;
+              line-height: 43px;">picture_as_pdf</i></a> 
+          </div>     
+          -->
+      <!-- <div class="col s2 m2 l4">
+        <a
+          class="waves-effect orage darken-4 btn-large"
+          style="height: 42px; line-height: 43px; padding: 0px 20px"
+          [routerLink]="['./patientdetails']"
+          href="!#"
+          ><i
+            class="large material-icons"
+            style="font-size: 2rem; height: 42px; line-height: 43px"
+            >add</i
+          ></a
+        >
+      </div> -->
+    </div>
+  </nav>
+  <div style="padding: 5px">
+    <div style="padding: 0px 10px">
+      <table class="highlight bordered" style="border: 1px solid #ddd">
+        <thead class="orange lighten-5">
+          <tr>
+            <!-- <th>ID</th> -->
+
+            <th>FirstName</th>
+
+            <th>LastName</th>
+            <th>Phone Number</th>
+
+            <th>Email</th>
+
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngIf="record">
+            <!-- <td>{{ record.userId }}</td> -->
+            <td>{{ record.firstName }}</td>
+
+            <td>{{ record.lastName }}</td>
+            <td>{{ record.phoneNumber }}</td>
+
+            <td>{{ record.emailId }}</td>
+            <td>
+              <a
+                class="btn-floating waves-effect waves-light yellow darken-3"
+                (click)="edit(record.userId)"
+                ><i class="material-icons">edit</i></a
+              >
+              <!-- <a
+                class="btn-floating waves-effect waves-light red darken-2 modal-trigger"
+                (click)="selectForDelete(record.userId)"
+                href="#modal1"
+                ><i class="material-icons">delete</i></a
+              > -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="progress" *ngIf="isLoading">
+        <div class="indeterminate"></div>
+      </div>
+
+      <my-pagination
+        (goPage)="goToPage($event)"
+        (goNext)="onNext()"
+        (goPrev)="onPrev()"
+        [pagesToShow]="10"
+        [page]="page"
+        [perPage]="limit"
+        [count]="total"
+      >
+      </my-pagination>
+    </div>
+  </div>
+  <div id="modal12" class="modal">
+    <div class="modal-content">
+      <h4>Upload the Data</h4>
+      <p>Please Choose the File.</p>
+      <p>
+        <input
+          type="file"
+          name="file"
+          #fileInput
+          (change)="onFileSelect($event)"
+        />
+      </p>
+      <!--  </div>
+      <div class="modal-footer"> -->
+    </div>
+    <div class="modal-content">
+      <h4>Download the Data</h4>
+
+      <p>Total Records: {{ totalEmployees }}</p>
+    </div>
+  </div>
+
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Delete?</h4>
+      <p>Are you sure, you want to delete this record?</p>
+    </div>
+    <div class="modal-footer">
+      <a
+        [routerLink]="['./']"
+        (click)="delete()"
+        class="modal-action modal-close waves-effect waves-green btn red"
+        >Delete</a
+      >
+    </div>
+  </div>
+</div>

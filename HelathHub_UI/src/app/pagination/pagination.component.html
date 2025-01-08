@@ -1,0 +1,17 @@
+<div class="pagination" *ngIf="count > 0">
+	<div class="description" style="font-size: 13px;
+  color: #666;">
+		<span class="page-counts">{{ getMin() }} - {{ getMax() }} of {{ count }}</span>
+		<span class="page-totals">({{ totalPages() }} pages)</span>
+	</div>
+	<ul class="pagination">
+		<li class="waves-effect" (click)="onPrev()" [ngClass]="{ 'disabled': page === 1 || loading }"><a ><i class="material-icons">chevron_left</i></a></li>
+		<li class="waves-effect"
+			*ngFor="let pageNum of getPages()"
+			(click)="onPage(pageNum)"
+			[ngClass]="{'active amber darken-4': pageNum === page, 'disabled': loading}"><a>{{ pageNum }}</a></li>
+
+    <li class="waves-effect" (click)="onNext(true)"  [ngClass]="{ 'disabled': lastPage() || loading }"><a><i class="material-icons">chevron_right</i></a></li>
+	</ul>
+</div>
+

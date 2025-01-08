@@ -1,0 +1,22 @@
+main {
+  flex: 1;
+}
+
+main,
+app-footer {
+  margin-left: 250px;
+}
+
+.login-style {
+  display: flex;
+  justify-content: left;
+
+  align-items: center;
+}
+
+@media only screen and (max-width: 992px) {
+  main,
+  app-footer {
+    margin-left: 0;
+  }
+}

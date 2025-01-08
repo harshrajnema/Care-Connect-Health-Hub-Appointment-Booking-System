@@ -1,0 +1,48 @@
+app-root {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: #6f6767;
+  }
+  
+::-webkit-scrollbar-track {    
+    background: #bbb;
+  }
+
+#slide-out {
+    margin-top: 64px;
+        background-color: #043d5f;
+}
+
+.breadcrumb:before {
+    color: #777;
+}
+
+.breadcrumb.active {
+    color: #616161 !important;
+}
+
+nav {
+    box-shadow: none !important;
+}
+
+.info-tile {
+    padding: 5px 25px !important;
+}
+
+td {
+    padding: 5px 0px !important;
+}
+
+td, th {
+    padding-left: 15px !important;
+}

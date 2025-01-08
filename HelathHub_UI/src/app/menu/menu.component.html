@@ -1,0 +1,66 @@
+<script type="text/javascript">
+  window.ZohoHCAsap =
+    window.ZohoHCAsap ||
+    function (a, b) {
+      ZohoHCAsap[a] = b;
+    };
+  (function () {
+    var d = document;
+    var s = d.createElement("script");
+    s.type = "text/javascript";
+    s.defer = true;
+    s.src =
+      "https://desk.zoho.in/portal/api/web/inapp/25890000000080001?orgId=60004768086";
+    d.getElementsByTagName("head")[0].appendChild(s);
+  })();
+</script>
+
+<div class="adminMenu">
+  <ul id="slide-out" class="side-nav fixed">
+    <li>
+      <a
+        [routerLink]="['./patient']"
+        routerLinkActive="   "
+        class="waves-effect white-text"
+        ><i class="material-icons white-text">person</i>Profile</a
+      >
+    </li>
+    <hr />
+    <li>
+      <a
+        [routerLink]="['./practitioner']"
+        routerLinkActive="   "
+        class="waves-effect white-text"
+        ><i class="material-icons white-text">healing</i>Practitioners</a
+      >
+    </li>
+    <hr />
+    <li>
+      <a
+        [routerLink]="['./appointments']"
+        routerLinkActive="   "
+        class="waves-effect white-text"
+        ><i class="material-icons white-text">book</i>Appointments</a
+      >
+    </li>
+    <hr />
+    <li>
+      <a
+        [routerLink]="['./status']"
+        routerLinkActive="   "
+        class="waves-effect white-text"
+        ><i class="material-icons white-text">scheduled</i>Status</a
+      >
+    </li>
+    <hr />
+    <li>
+      <a
+        [routerLink]="['./feedback']"
+        routerLinkActive="   "
+        class="waves-effect white-text"
+        ><i class="material-icons white-text">feedback</i>Feedback</a
+      >
+    </li>
+    <hr />
+  </ul>
+</div>

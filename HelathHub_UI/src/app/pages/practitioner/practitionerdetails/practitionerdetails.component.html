@@ -1,0 +1,75 @@
+<div class="row">  
+    <nav>
+        <div class="nav-wrapper white grey-text text-darken-2">
+          <div class="col s12 grey-text text-darken-2">
+             <a [routerLink]="['../../']" class="breadcrumb grey-text">Dashboard</a>
+            <a [routerLink]="['../']" class="breadcrumb grey-text">Practitioner</a>
+            <a [routerLink]="['./']" class="breadcrumb active">Details</a>
+          </div>
+        </div>
+    </nav>
+
+    <div class="row" style="padding: 0px 20px">
+    <ul class="collapsible popout z-depth-5" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header light-green-text text-darken-4 active grey lighten-5" style="font-size: 20px"><i class="material-icons amber-text text-darken-4" style="font-size: 30px">looks_one</i>
+          Practitioner Profile</div>
+        <div class="collapsible-body">
+  
+          <form >
+
+            <div class="row">
+
+                     
+
+                           <div class="input-field col s12 m6  l4 ">
+                          <input  id="firstName" type="text" class="validate" [(ngModel)]="firstName" name=" firstName">
+                          <label class="active" for=" firstName">FirstName</label>
+                        </div>  
+ 
+
+                        <div class="input-field col s12 m6  l4 ">
+                          <input  id="lastName" type="text" class="validate" [(ngModel)]="lastName" name=" lastName">
+                          <label class="active" for=" lastName">LastName</label>
+                        </div>  
+                        <div class="input-field col s12 m6  l4 ">
+                          <input  id="specialty" type="text" class="validate" [(ngModel)]="specialty" name=" specialty">
+                          <label class="active" for=" specialty">specialty</label>
+                        </div>  
+ 
+
+                     
+                    
+                         
+                         <div class="input-field col s12 m6  l4 ">
+                          <input  id="emailId" type="text" class="validate" [(ngModel)]="emailId" name="emailId">
+                          <label class="active" for="emailId">Email</label>
+                        </div>
+
+                        <div class="input-field col s12 m6  l4 ">
+                          <input  id="phoneNumber" type="text" class="validate" [(ngModel)]="phoneNumber" name="phoneNumber">
+                          <label class="active" for="phoneNumber">PhoneNumber</label>
+                        </div>
+
+
+ 
+                        
+ 
+                        
+                         
+                       
+                    </div>
+                    <button class="btn waves-effect waves-light orange"  (click)="createNewPractitioner()" name="action">Save                       <i class="material-icons right">add</i>
+                      </button> 
+                      <div class="progress" *ngIf="isLoading">
+                          <div class="indeterminate"></div>
+                      </div>
+                    </form>
+        </div>
+      </li>
+
+     
+    </ul>   
+  </div> 
+  
+  </div>
